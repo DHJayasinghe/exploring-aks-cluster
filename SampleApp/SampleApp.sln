@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering", "Ordering\Ordering.csproj", "{95B24DB9-516C-4946-B273-536A8CE7346E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog", "Catalog\Catalog.csproj", "{1D1AE161-D638-413D-AED8-DEC7DC3FF9B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payment", "Payment\Payment.csproj", "{E732DCA4-BABE-4393-ABD6-C324ADA2EA54}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95B24DB9-516C-4946-B273-536A8CE7346E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95B24DB9-516C-4946-B273-536A8CE7346E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95B24DB9-516C-4946-B273-536A8CE7346E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95B24DB9-516C-4946-B273-536A8CE7346E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D1AE161-D638-413D-AED8-DEC7DC3FF9B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D1AE161-D638-413D-AED8-DEC7DC3FF9B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D1AE161-D638-413D-AED8-DEC7DC3FF9B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D1AE161-D638-413D-AED8-DEC7DC3FF9B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E732DCA4-BABE-4393-ABD6-C324ADA2EA54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E732DCA4-BABE-4393-ABD6-C324ADA2EA54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E732DCA4-BABE-4393-ABD6-C324ADA2EA54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E732DCA4-BABE-4393-ABD6-C324ADA2EA54}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DB8E964-8325-4F93-8AF5-6A6061D1985A}
+	EndGlobalSection
+EndGlobal
