@@ -14,5 +14,5 @@ jobs:
       
     - name: 'Set image version flag'
       run: |
-        echo "version=$(date +%s)"
+        echo "version=$(date +%s)"  >> $GITHUB_ENV
         echo ${version}
