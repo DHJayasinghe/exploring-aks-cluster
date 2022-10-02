@@ -12,7 +12,7 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
       
-    - name: 'Set image version flag'
+    - name: 'Set image Version flag'
       run: |
         echo "version=$(date +%s)"  >> $GITHUB_ENV
-        echo ${version}
+        echo '${{ env.version }}'
