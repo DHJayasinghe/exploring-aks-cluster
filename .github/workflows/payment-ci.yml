@@ -1,4 +1,4 @@
-name: Ordering CI
+name: Payment CI
 
 on: workflow_dispatch
 
@@ -23,12 +23,12 @@ jobs:
       run: echo "${{ env.version }}"
       
     - name: Build the Docker image
-      run: docker build . --file SampleApp/Ordering/Dockerfile --tag hasitha2kandy/sample-dotnet-app:ordering-api-${{env.version}}
+      run: docker build . --file SampleApp/Payment/Dockerfile --tag hasitha2kandy/sample-dotnet-app:payment-api-${{env.version}}
 
     - name: Tag the Latest image
-      run: docker tag hasitha2kandy/sample-dotnet-app:ordering-api-${{env.version}} hasitha2kandy/sample-dotnet-app:ordering-api-latest
+      run: docker tag hasitha2kandy/sample-dotnet-app:payment-api-${{env.version}} hasitha2kandy/sample-dotnet-app:payment-api-latest
       
     - name: Push images to Docker Hub
       run: |
-        docker push hasitha2kandy/sample-dotnet-app:ordering-api-${{env.version}}
-        docker push hasitha2kandy/sample-dotnet-app:ordering-api-latest
+        docker push hasitha2kandy/sample-dotnet-app:payment-api-${{env.version}}
+        docker push hasitha2kandy/sample-dotnet-app:payment-api-latest
