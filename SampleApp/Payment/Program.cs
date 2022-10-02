@@ -5,8 +5,6 @@ builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
-app.UseHttpsRedirection();
-
 app.MapGet("/api", async () =>
  {
      using var scope = app.Services.CreateScope();
