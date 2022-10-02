@@ -15,4 +15,4 @@ jobs:
     - name: 'Set image version flag'
       run: |
         echo "version=$(date +%s)"
-        echo env.flag
+        echo ${version}
