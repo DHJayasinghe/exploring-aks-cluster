@@ -1,0 +1,18 @@
+name: Ordering CI
+
+on: workflow_dispatch
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+      
+    - name: 'Set image version flag'
+      run: |
+        echo "version=$(date +%s)"
+        echo env.flag
