@@ -26,7 +26,7 @@ jobs:
       run: docker build . --file SampleApp/Ordering/Dockerfile --tag hasitha2kandy/sample-dotnet-app:ordering-api-${{env.version}}
 
     - name: Tag the Latest image
-      run: docker tag hasitha2kandy/sample-dotnet-app/ordering-api:${{env.version}} hasitha2kandy/sample-dotnet-app:ordering-api-latest
+      run: docker tag hasitha2kandy/sample-dotnet-app:ordering-api-${{env.version}} hasitha2kandy/sample-dotnet-app:ordering-api-latest
       
     - name: Push images to Docker Hub
       run: |
