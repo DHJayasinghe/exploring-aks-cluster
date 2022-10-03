@@ -1,0 +1,128 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aks-helloworld-one  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aks-helloworld-one
+  template:
+    metadata:
+      labels:
+        app: aks-helloworld-one
+    spec:
+      containers:
+      - name: aks-helloworld-one
+        image: mcr.microsoft.com/azuredocs/aks-helloworld:v1
+        ports:
+        - containerPort: 80
+        env:
+        - name: TITLE
+          value: "Welcome to Azure Kubernetes Service (AKS)"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aks-helloworld-one  
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+  selector:
+    app: aks-helloworld-one
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payment-api
+  template:
+    metadata:
+      labels:
+        app: payment-api
+    spec:
+      containers:
+        - name: payment-api
+          image: hasitha2kandy/sample-dotnet-app:payment-api-latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment-api
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+  selector:
+    app: payment-api
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalog-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: catalog-api
+  template:
+    metadata:
+      labels:
+        app: catalog-api
+    spec:
+      containers:
+        - name: catalog-api
+          image: hasitha2kandy/sample-dotnet-app:catalog-api-latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: catalog-api
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+  selector:
+    app: catalog-api
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ordering-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ordering-api
+  template:
+    metadata:
+      labels:
+        app: ordering-api
+    spec:
+      containers:
+        - name: ordering-api
+          image: hasitha2kandy/sample-dotnet-app:ordering-api-1664710528
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ordering-api
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+  selector:
+    app: ordering-api

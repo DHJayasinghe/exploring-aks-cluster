@@ -1,0 +1,48 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pmapp-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - path: /payment(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: payment-api
+            port:
+              number: 80
+      - path: /ordering(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: ordering-api
+            port:
+              number: 80
+      - path: /catalog(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: catalog-api
+            port:
+              number: 80
+      - path: /(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: aks-helloworld-one
+            port:
+              number: 80
+      - path: /hello-world-one(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: aks-helloworld-one
+            port:
+              number: 80
